@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <winsock2.h>
-
+#if 0
 p2p_uint16_t GETVAL16H(const p2p_uint8_t *buf, unsigned pos)
 {
     return (p2p_uint16_t) ((buf[pos + 0] << 8) | (buf[pos + 1] << 0));
@@ -58,7 +58,7 @@ void PUTVAL32H(p2p_uint8_t *buf, unsigned pos, p2p_uint32_t hval)
     buf[pos+2] = (p2p_uint8_t) ((hval & 0x0000FF00UL) >>  8);
     buf[pos+3] = (p2p_uint8_t) ((hval & 0x000000FFUL) >>  0);
 }
-
+#endif
 #define INIT_ATTR(a,t,l)    (a)->hdr.type=(p2p_uint16_t)(t), \
 			    (a)->hdr.length=(p2p_uint16_t)(l)
 #define ATTR_HDR_LEN	    4
